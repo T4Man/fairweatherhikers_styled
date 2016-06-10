@@ -1,17 +1,17 @@
 var baseUrl = require('../../config').baseUrl;
 
 module.exports = function(app) {
-  app.factory('fwhAuth', ['$http', '$q', function($http, $q) {
+  app.factory('fwhAuth', ['$https', '$q', function($https, $q) {
     return {
       removeToken: function() {
         this.token = null;
         this.email = null;
-        $http.defaults.headers.common.token = null;
+        $https.defaults.headers.common.token = null;
         window.localStorage.token = '';
       },
       saveToken: function(token) {
         this.token = token;
-        $http.defaults.headers.common.token = token;
+        $https.defaults.headers.common.token = token;
         window.localStorage.token = token;
         return token;
       },
@@ -24,7 +24,7 @@ module.exports = function(app) {
           if (this.email) return resolve(this.email);
           if (!this.getToken()) return reject(new Error('No valid token.'));
 
-          $http.get(baseUrl + '/api/userprofile')
+          $https.get(baseUrl + '/api/userprofile')
             .then((res) => {
               this.email = res.data.email;
               resolve(res.data.email);

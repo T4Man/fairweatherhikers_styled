@@ -1,10 +1,10 @@
 var baseUrl = require('../../config').baseUrl;
 module.exports = function(app) {
-  app.controller('SignInController', ['$http', '$location', 'handleError', 'fwhAuth', function($http, $location, handleError, auth) {
+  app.controller('SignInController', ['$https', '$location', 'handleError', 'fwhAuth', function($https, $location, handleError, auth) {
     this.buttonText = 'Submit';
     this.errors = [];
     this.authenticate = function(user) {
-      $http({
+      $https({
         method: 'GET',
         url: baseUrl + '/api/signin',
         headers: {

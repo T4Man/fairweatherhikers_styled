@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.factory('fwhResource', ['$http', '$q', 'handleError', function($http, $q, handleError) {
+  app.factory('fwhResource', ['$https', '$q', 'handleError', function($https, $q, handleError) {
     var Resource = function(resourceArr, errsArr, baseUrl, options) {
       this.weather = [];
       this.data = resourceArr;
@@ -10,7 +10,7 @@ module.exports = function(app) {
     };
 
     Resource.prototype.getAll = function() {
-      return $http.get(this.url)
+      return $https.get(this.url)
         .then((res) => {
           var data = [];
           for (var i = 0; i < res.data.length && i < 50; i++) {
@@ -27,8 +27,8 @@ module.exports = function(app) {
 
     Resource.prototype.addWeather = function(data) {
       for (var i = 0; i < data.length; i++) {
-        var weatherURL = 'http://localhost:3000/api/forecast?lat=' + data[i].lat.toFixed(1) + '&lon=' + data[i].lon.toFixed(1);
-        $http.get(weatherURL)
+        var weatherURL = 'https://localhost:3000/api/forecast?lat=' + data[i].lat.toFixed(1) + '&lon=' + data[i].lon.toFixed(1);
+        $https.get(weatherURL)
           .then((weather) => {
             this.weather.push(weather.data);
             var found = data.filter((obj) => {
@@ -59,19 +59,19 @@ module.exports = function(app) {
     };
 
     Resource.prototype.create = function(resource) {
-      return $http.post(this.url, resource)
+      return $https.post(this.url, resource)
         .then((res) => {
           this.data.push(res.data);
         }, handleError(this.errors, this.options.errMsgs.create || 'Could not CREATE resource.'));
     };
 
     Resource.prototype.update = function(resource) {
-      return $http.put(this.url + '/' + resource._id, resource)
+      return $https.put(this.url + '/' + resource._id, resource)
         .catch(handleError(this.errors, this.options.errMsgs.update || 'Could not UPDATE resource.'));
     };
 
     Resource.prototype.remove = function(resource) {
-      return $http.delete(this.url + '/' + resource._id)
+      return $https.delete(this.url + '/' + resource._id)
         .then(() => {
           this.data.splice(this.data.indexOf(resource), 1);
         }, handleError(this.errors, this.options.errMsgs.remove || 'Could not REMOVE resource.'));
