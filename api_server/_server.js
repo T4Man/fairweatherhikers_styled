@@ -18,6 +18,14 @@ app.use('/api', hikeMatchRouter);
 app.use('/api', forecastRouter);
 app.use(express.static(__dirname + '/../client/build'));
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, DELETE, PUT, PATCH');
+  next();
+});
+
+
 module.exports = exports = {
   server: { close: function() {
     throw new Error('Server not started yet!');
