@@ -9,26 +9,46 @@
   height: 400px;
 }
 
+.start-content {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
 .weather {
   height: 20%;
   padding: 5px 15px;
 }
 
-#all-trails {
-  clear: both;
-  height: 25%;
-  width: 90%;
+#start-page-wrap {
+  padding: 5px;
+  width: 960px;
+  margin: 20px auto;
+}
+header {
+  height: 100px;
   padding: 0 15px;
-  float: left;
+}
+
+.auth-view {
+  width: 50%;
+  height: auto;
+  margin-left: 20%;
+  margin-top: 20px;
+}
+
+footer {
+  clear: both;
+  padding: 0 15px;
+  margin-top: 100px;
 }
 
 .map-div {
   height: 30%;
-  width: 40%;
+  width: 50%;
   float: left;
   padding: 5px 15px;
 }
-
 
 #favorite {
   height: 30%;
@@ -36,11 +56,6 @@
   float: left;
   padding: 5px 5px;
   margin: 0px 5px 5px 5px;
-}
-
-footer {
-  clear: both;
-  padding: 0 15px;
 }
 
 /***MEDIA QUERIES**/
@@ -52,7 +67,7 @@ footer {
   }
 
   .map-div {
-    width: 41%;
+    width: 40%;
     padding: 1% 4%;
   }
 
@@ -70,6 +85,21 @@ footer {
   }
 
   .weather, footer {
+    padding: 1% 4%;
+  }
+
+  #start-page-wrap  {
+    width: 94%;
+  }
+  .start-content {
+    width: 41%;
+    padding: 1% 4%;
+  }
+  .auth-view {
+    margin-left: 15%;
+  }
+
+  header, footer {
     padding: 1% 4%;
   }
 }
@@ -92,10 +122,32 @@ footer {
     width: auto;
     float: none;
   }
+
+  .start-content {
+    width: auto;
+    float: none;
+  }
+
+  .auth-view {
+    float: none;
+    margin-left: 15%;
+    input {
+    height: 15px;
+    width: auto;
+    }
+  }
 }
 
 /* for 480px or less */
 @media screen and (max-width: 480px) {
+
+  header {
+    height: auto;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
 
   .weather {
     height: auto;
@@ -104,20 +156,47 @@ footer {
   #all-trails {
     height: 20%;
   }
+
+  footer {
+    height: 100px;
+    width: 100%;
+  }
+
+  .map-div {
+    width: auto;
+  }
+
+  .trail-list {
+    font-size: 0.8em;
+    li {
+      padding-bottom: 5px;
+      }
+    }
+
+  .auth-view {
+    min-width: 220px;
+    div {
+    margin-left: 5px;
+    display: block;
+    }
+    input {
+    height: 15px;
+    }
+  }
 }
 
 .map-div {
   background: #f8f8f8;
 }
 
-#all-trails, #favorite {
+#all-trails, #favorite, .start-content, h3 {
   background-color: rgba(164, 191, 208, 0.5);
 }
 
-.weather, .map-div, #favorite, #all-trails {
+.weather, .map-div, #favorite, #all-trails, header, .start-content, .auth-view {
   margin-bottom: 5px;
 }
 
-#pagewrap, .weather, .map-div, #favorite, #all-trails, footer, header, .auth-view, .fwh-title {
+.start-content, .weather, .map-div, #all-trails, footer, h3 {
   border: solid 1px #ccc;
 }
