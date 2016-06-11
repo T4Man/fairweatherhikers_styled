@@ -1,6 +1,6 @@
 var https = require('https');
 var http = require('http');
-var API_KEY = 'fdbc915b0ead7e316556b1de658613ef';
+var API_KEY = '4dd6e499ee9c5050f84273cd258cef88';
 
 module.exports = exports = function(lat, lon) {
 

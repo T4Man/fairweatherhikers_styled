@@ -5,8 +5,8 @@ module.exports = function(app) {
 
     var trailArray = mapResource.get();
     // Seattle Center is at the following lat, long
-    var centerLatitude = document.getElementById('startPointLat') || 47.6205063;
-    var centerLongitude = document.getElementById('startPointLon') || -122.3493;
+    var centerLatitude = document.getElementById('startPointLat') || 47.4957;
+    var centerLongitude = document.getElementById('startPointLon') || -121.7868;
     var zoom = document.getElementById('startZoom') || 8;
     // 50 miles = 80450 meters
     var drivingRadius = document.getElementById('drivingRadius') || 80450;
@@ -46,7 +46,7 @@ module.exports = function(app) {
 
     var generateTrailMarkers = function(trailArray) {
       $scope.trailMarkers = [];
-      for (var i = 0; i < trailArray.length && i < 50; i++) {
+      for (var i = 0; i < trailArray.length && i < 10; i++) {
         var marker = {
           title: trailArray[i].trailName,
           latitude: trailArray[i].lat,

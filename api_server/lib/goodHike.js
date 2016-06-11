@@ -3,6 +3,7 @@ module.exports = exports = function(data, res, cb) {
 
   var trailArray = data;
   var goodWeatherTrailArray = [];
+  console.log(trailArray);
 
   if (!trailArray.length) {
     return res.status(200).json({
