@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.controller('MapController', ['mapResource', '$scope', 'uiGmapGoogleMapApi', function(mapResource, $scope, uiGmapGoogleMapApi) {
 
     var trailArray = mapResource.get();
-    // Seattle Center is at the following lat, long
+    // North Bend is at the following lat, long
     var centerLatitude = document.getElementById('startPointLat') || 47.4957;
     var centerLongitude = document.getElementById('startPointLon') || -121.7868;
     var zoom = document.getElementById('startZoom') || 8;
