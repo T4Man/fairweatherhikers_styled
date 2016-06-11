@@ -14,18 +14,18 @@
 	<h1>Fair Weather Hikers</h1>
   </section>
 </header>
+
 <main>
   <section class="start-content">
   	<h3>Welcome to Fair Weather Hikers</h3>
     <p>What's the weather like on your favorite trails?</p>
     <p>Get the temperature and rain forecast at the click of a button.</p>
-
-  </section>
-  <section class="logout">
-	  <div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
-	    <p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
-	    <div data-ng-view></div>
-	  </div>
+    <section class="logout">
+  	  <div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
+  	    <p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
+  	    <div data-ng-view></div>
+  	  </div>
+    </section>
   </section>
 </main>
 
@@ -34,7 +34,7 @@
 	<a href="http://facebook.com" target="_blank"><img class="footer-buttons" src="./facebook.png" alt="" /></a>
 	<a href="http://twitter.com" target="_blank"><img class="footer-buttons" src="./tweet.png" alt="" /></a</li>
 	<a href="#top" target="_blank"><img class="footer-buttons" src="./up.png" alt="" /></a>
-  <p>Written by Ali Forman, Gene Troy, James Norton, Kris Skelton, Tim Forman</p>
+  <p>Written by Gene Troy, James Norton, Kris Skelton, Ali Forman, Tim Forman</p>
   </section>
 </footer>
 </div>

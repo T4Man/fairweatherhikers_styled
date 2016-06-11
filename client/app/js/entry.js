@@ -55,7 +55,7 @@ demoApp.config(['$routeProvider', function($rp) {
 
 demoApp.config(['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProvider) {
   uiGmapGoogleMapApiProvider.configure({
-    key: 'AIzaSyAjHPG5y2dcj239xMNVoDzZKWRKO1Xi0oI',
+    key: 'AIzaSyB1digPL08cFa0LVYUQjquWvIXfpwLS3gA',
     v: '3.24',
     libraries: 'weather,geometry,visualization'
   });

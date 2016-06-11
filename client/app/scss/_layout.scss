@@ -10,9 +10,9 @@
 }
 
 .start-content {
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
+  width: 90%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .weather {
@@ -66,17 +66,11 @@ footer {
     width: 94%;
   }
 
-  .map-div {
-    width: 40%;
-    padding: 1% 4%;
-  }
+  // .map-div {
+  //   width: 40%;
+  //   padding: 1% 4%;
+  // }
 
-  #favorite {
-    width: 41%;
-    padding: 1% 4%;
-    margin: 0px 0px 5px 5px;
-    float: right;
-  }
   #all-trails {
     clear: both;
     padding: 1% 4%;
@@ -92,11 +86,14 @@ footer {
     width: 94%;
   }
   .start-content {
-    width: 41%;
+    width: 90%;
+    margin-left: 2%;
+    margin-right: 2%;
     padding: 1% 4%;
   }
   .auth-view {
-    margin-left: 15%;
+    width: 90%;
+    margin-left: 5%;
   }
 
   header, footer {
@@ -112,25 +109,13 @@ footer {
     float: none;
   }
 
-  #favorite {
-    width: auto;
-    float: none;
-    margin-left: 0px;
-  }
-
   #all-trails {
-    width: auto;
-    float: none;
-  }
-
-  .start-content {
     width: auto;
     float: none;
   }
 
   .auth-view {
     float: none;
-    margin-left: 15%;
     input {
     height: 15px;
     width: auto;
@@ -147,6 +132,10 @@ footer {
 
   h1 {
     font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 1.5em;
   }
 
   .weather {
@@ -197,6 +186,6 @@ footer {
   margin-bottom: 5px;
 }
 
-.start-content, .weather, .map-div, #all-trails, footer, h3 {
+.start-page-wrap, .start-content, .weather, .map-div, #all-trails, footer, h3 {
   border: solid 1px #ccc;
 }
