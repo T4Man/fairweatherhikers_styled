@@ -21,7 +21,9 @@ module.exports = function(app) {
 
     this.getWeather = function() {
       remote.getAll().then((data) => {
-        remote.addWeather(data);
+        setTimeout(
+        remote.addWeather(data)
+      ), 5000;
       });
     };
 
