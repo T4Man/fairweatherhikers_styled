@@ -1,7 +1,7 @@
 var baseUrl = require('../../config').baseUrl;
 
 module.exports = function(app) {
-  app.controller('MapController', ['mapResource', '$scope', 'uiGmapGoogleMapApi', function(mapResource, $scope, uiGmapGoogleMapApi) {
+  app.controller('MapController', ['mapResource', '$scope', 'uiGmapGoogleMapApi', 'uiGmapIsReady', function(mapResource, $scope, uiGmapGoogleMapApi, uiGmapIsReady) {
 
     var trailArray = mapResource.get();
     // North Bend is at the following lat, long
@@ -79,9 +79,10 @@ module.exports = function(app) {
 
       $scope.map.trailMarkers = $scope.trailMarkers;
     };
-
     uiGmapGoogleMapApi.then(function(maps) {
-      generateTrailMarkers(trailArray);
+      uiGmapIsReady.promise(1).then(function(instances) {
+        generateTrailMarkers(trailArray);
+      })
     }).catch(function(err) {});
   }]);
 };
