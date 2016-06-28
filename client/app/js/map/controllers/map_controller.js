@@ -46,7 +46,7 @@ module.exports = function(app) {
 
     var generateTrailMarkers = function(trailArray) {
       $scope.trailMarkers = [];
-      for (var i = 0; i < trailArray.length && i < 10; i++) {
+      for (var i = 0; i < trailArray.length && i < 50; i++) {
         var marker = {
           title: trailArray[i].trailName,
           latitude: trailArray[i].lat,

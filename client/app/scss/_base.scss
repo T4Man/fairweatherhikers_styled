@@ -16,18 +16,18 @@ h3 {
   font-size: 1.5em;
   font-family: Didot;
   font-weight: bold;
-  padding-top: 5%;
+  padding-top: 1%;
+  width: 100%;
 }
 
 p {
   font-size: 1.2em;
   font-family: Didot;
   font-weight: bold;
-  padding-top: 5%;
+  padding-top: 3%;
 }
 
 footer {
-  background-color: rgba(164, 191, 208, 0.5);
   p {
     font-size: 1em;
     padding: 5px;
@@ -64,4 +64,8 @@ footer {
 
 .weather {
   background-color: rgba(164, 191, 208, 1)
+}
+
+.logout {
+  font-size: 1.2em;
 }

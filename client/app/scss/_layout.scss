@@ -11,19 +11,16 @@
 
 .start-content {
   width: 90%;
-  margin-left: 2%;
-  margin-right: 2%;
-}
-
-.weather {
-  height: 20%;
-  padding: 5px 15px;
+  margin: 0 2% 0 2%;
 }
 
 #start-page-wrap {
   padding: 5px;
   width: 960px;
   margin: 20px auto;
+  .start-content {
+  margin-bottom: 0;
+  }
 }
 header {
   height: 100px;
@@ -31,31 +28,50 @@ header {
 }
 
 .auth-view {
-  width: 50%;
+  width: 220px;
   height: auto;
-  margin-left: 20%;
-  margin-top: 20px;
+  margin-left: 40%;
+  margin-top: 40px;
+  label {
+    margin-left: 5px;
+    display: block;
+    }
+  input {
+    height: 15px;
+    width: 80%;
+  }
 }
 
 footer {
   clear: both;
   padding: 0 15px;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .map-div {
   height: 30%;
-  width: 50%;
+  width: 90%;
   float: left;
   padding: 5px 15px;
+  margin-top: 40px;
 }
-
-#favorite {
-  height: 30%;
-  width: 40%;
+.forecast-list {
+  height: auto;
+  width: 90%;
   float: left;
   padding: 5px 5px;
-  margin: 0px 5px 5px 5px;
+  margin-top: 50px;
+  margin-left: 10px;
+  clear: both;
+  .weather {
+  height: auto;
+  width: 95%;
+  padding: 5px 15px;
+  }
+}
+.logout {
+  margin-left: 20px;
+  width: 90%;
 }
 
 /***MEDIA QUERIES**/
@@ -66,10 +82,9 @@ footer {
     width: 94%;
   }
 
-  // .map-div {
-  //   width: 40%;
-  //   padding: 1% 4%;
-  // }
+  .auth-view {
+  margin-left: 30%;
+  }
 
   #all-trails {
     clear: both;
@@ -78,7 +93,11 @@ footer {
     float: none;
   }
 
-  .weather, footer {
+  .map-div {
+    width: 90%;
+    float: none;
+  }
+  footer {
     padding: 1% 4%;
   }
 
@@ -91,45 +110,50 @@ footer {
     margin-right: 2%;
     padding: 1% 4%;
   }
-  .auth-view {
-    width: 90%;
-    margin-left: 5%;
-  }
 
   header, footer {
     padding: 1% 4%;
   }
 }
+@media screen and (max-width: 700px) {
+.trail-list {
+  font-size: .8em;
+  }
+}
 
 /* for 700px or less */
 @media screen and (max-width: 600px) {
-
   .map-div {
     width: auto;
     float: none;
+  }
+
+  .auth-view {
+  margin-left: 20%;
   }
 
   #all-trails {
     width: auto;
     float: none;
   }
-
-  .auth-view {
-    float: none;
-    input {
-    height: 15px;
-    width: auto;
-    }
-  }
 }
 
 /* for 480px or less */
 @media screen and (max-width: 480px) {
-
+  #page-wrap {
+    height: 200px;
+  }
+  .start-content {
+  width: 90%;
+  height: 10%;
+  margin: 0 2% 1% 2%;
+  }
   header {
     height: auto;
   }
-
+  .trail-list {
+    font-size: .6em;
+    }
   h1 {
     font-size: 2.5em;
   }
@@ -137,11 +161,6 @@ footer {
   h3 {
     font-size: 1.5em;
   }
-
-  .weather {
-    height: auto;
-   }
-
   #all-trails {
     height: 20%;
   }
@@ -161,31 +180,20 @@ footer {
       padding-bottom: 5px;
       }
     }
-
-  .auth-view {
-    min-width: 220px;
-    div {
-    margin-left: 5px;
-    display: block;
-    }
-    input {
-    height: 15px;
-    }
-  }
 }
 
 .map-div {
   background: #f8f8f8;
 }
 
-#all-trails, #favorite, .start-content, h3 {
+#all-trails, .about-logout, .logout, h3, .collaborators {
   background-color: rgba(164, 191, 208, 0.5);
 }
 
-.weather, .map-div, #favorite, #all-trails, header, .start-content, .auth-view {
+.weather, .map-div, #all-trails, header, .start-content, .auth-view {
   margin-bottom: 5px;
 }
 
-.start-page-wrap, .start-content, .weather, .map-div, #all-trails, footer, h3 {
+.weather, .map-div, #all-trails {
   border: solid 1px #ccc;
 }

@@ -56,14 +56,10 @@ Open a second terminal window, navigate to the project directory, and type:
 > export APP_SECRET="appsecret"
 ```
 
-## Run the backend server
+## Start the server
 ```bash
-> npm startbackend
-```
-
-## Run the client server
-```bash
-> npm startclient
+> cd api_server
+> node index.js
 ```
 
 ## Authors
